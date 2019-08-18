@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@index');
+Route::get('/bantuan', 'PageController@bantuan');
+Route::get('/tentang', 'PageController@tentang');
+Route::get('/dashboard', 'LapanganController@index')->name('home');
+Route::resource('lapangan', 'LapanganController');
+Auth::routes();
+
+
